@@ -1,19 +1,23 @@
 package fr.cda.controle.beans;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="rdvpris")
-public class Rdvpris {
+public class RdvPris {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +28,10 @@ public class Rdvpris {
 	@JoinColumn( name="id_user", nullable = false)
 	private Account account;
 
+	
+	@OneToMany( fetch = FetchType.EAGER, mappedBy="id_actions.rdvPris")
+	private Set<Actions> listActions;
+	
 	
 	private String immatriculation;
 	private String date;

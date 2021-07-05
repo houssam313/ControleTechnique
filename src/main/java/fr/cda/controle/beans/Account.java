@@ -34,8 +34,14 @@ public class Account {
 	private Status status;
 		
 	@OneToMany( fetch = FetchType.EAGER , mappedBy ="account")
-	private Set<Rdvpris> listRdvpris;
+	private Set<RdvPris> listRdvpris;
+	
+	
+	@OneToMany( fetch = FetchType.EAGER , mappedBy ="id_actions.account")
+	private Set<Actions> listActions;
+	
 			
+	
 	private String duree;
 	private String nom;
 	private String prenom;
@@ -108,10 +114,10 @@ public class Account {
 	public void setUserrole(Userrole userrole) {
 		this.userrole = userrole;
 	}
-	public Set<Rdvpris> getListRdvpris() {
+	public Set<RdvPris> getListRdvpris() {
 		return listRdvpris;
 	}
-	public void setListRdvpris(Set<Rdvpris> listRdvpris) {
+	public void setListRdvpris(Set<RdvPris> listRdvpris) {
 		this.listRdvpris = listRdvpris;
 	}
 	@Override

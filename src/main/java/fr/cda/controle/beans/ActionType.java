@@ -20,6 +20,9 @@ public class ActionType {
 	
 	private String type_action;
 	
-	@OneToMany( fetch = FetchType.EAGER, mappedBy="status")
-	private Set<Account> listaccount;
+	@OneToMany( fetch = FetchType.EAGER, mappedBy="id_actions.actionType")
+	private Set<Actions> listActions;
+	
+	
+	
 }
