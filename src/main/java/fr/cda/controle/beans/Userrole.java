@@ -24,6 +24,24 @@ public class Userrole {
 	private Set<Account> listaccount;
 	
 	
+	
+	
+	
+	
+	
+	public Userrole(int id_role, String role_user) {
+		super();
+		this.id_role = id_role;
+		this.role_user = role_user;
+	}
+	
+	
+	public Userrole() {
+		
+	}
+	
+	
+	
 	public int getId_role() {
 		return id_role;
 	}

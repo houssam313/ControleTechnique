@@ -44,6 +44,35 @@ public class Account {
 	private String adresse;
 	
 	
+	
+	
+	
+	
+	public Account(String id_user, String password, Userrole userrole, Status status, Set<Rdvpris> listRdvpris,
+			String duree, String nom, String prenom, String tel, String email, String adresse) {
+		super();
+		this.id_user = id_user;
+		this.password = password;
+		this.userrole = userrole;
+		this.status = status;
+		this.listRdvpris = listRdvpris;
+		this.duree = duree;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.tel = tel;
+		this.email = email;
+		this.adresse = adresse;
+	}
+	
+	
+
+	public Account(			) {
+		
+	}
+	
+	
+	
+	
 	public String getId_user() {
 		return id_user;
 	}

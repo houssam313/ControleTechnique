@@ -31,10 +31,12 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
-		
+		/*	
 		System.out.println(accountRepository.findById("1").get().toString());
 		System.out.println( statusRepository.findById(1).get().getListaccount());
+		*/
 		return "home";
 	}
+	
 	
 }
