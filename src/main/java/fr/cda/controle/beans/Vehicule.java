@@ -1,10 +1,14 @@
 package fr.cda.controle.beans;
 
+import java.util.Map;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +31,10 @@ public class Vehicule {
 	@ManyToOne (cascade = CascadeType.REMOVE) 
 	@JoinColumn( name="id_typevehicule")
 	private VehiculeType  vehiculeType;
+	
+	@OneToMany (cascade = CascadeType.REMOVE) 
+	@JoinColumn( name="vehicule")
+	private Set<Passer>  listPasser;
 	
 	
 	

@@ -1,12 +1,16 @@
 package fr.cda.controle.beans;
 
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -37,6 +41,10 @@ public class Bilan {
 	@OneToOne( fetch = FetchType.EAGER)
 	@JoinColumn(name ="bilan")
 	VehiculeType vehiculeType;
+	
+	@OneToMany (cascade = CascadeType.REMOVE) 
+	@JoinColumn( name="bilan")
+	private Set<Passer>  listPasser;
 
 
 	public int getId_bilan() {
