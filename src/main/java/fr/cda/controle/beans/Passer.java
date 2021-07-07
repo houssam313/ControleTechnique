@@ -28,5 +28,31 @@ public class Passer implements Serializable{
 	@ManyToOne()
 	@JoinColumn(name = "id_bilan")
 	private Bilan bilan;
+
+	public Examen getExamen() {
+		return examen;
+	}
+
+	public void setExamen(Examen examen) {
+		this.examen = examen;
+	}
+
+	public Vehicule getVehicule() {
+		return vehicule;
+	}
+
+	public void setVehicule(Vehicule vehicule) {
+		this.vehicule = vehicule;
+	}
+
+	public Bilan getBilan() {
+		return bilan;
+	}
+
+	public void setBilan(Bilan bilan) {
+		this.bilan = bilan;
+	}
+	
+	
 	
 }

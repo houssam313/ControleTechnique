@@ -40,7 +40,8 @@ public class Account {
 	@OneToMany( fetch = FetchType.EAGER , mappedBy ="id_actions.account")
 	private Set<Actions> listActions;
 	
-			
+	@OneToMany( fetch = FetchType.EAGER , mappedBy ="account")
+	private Set<Examen> listExamen;		
 	
 	private String duree;
 	private String nom;

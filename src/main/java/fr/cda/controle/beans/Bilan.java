@@ -42,8 +42,7 @@ public class Bilan {
 	@JoinColumn(name ="bilan")
 	VehiculeType vehiculeType;
 	
-	@OneToMany (cascade = CascadeType.REMOVE) 
-	@JoinColumn( name="bilan")
+	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="bilan") 
 	private Set<Passer>  listPasser;
 
 

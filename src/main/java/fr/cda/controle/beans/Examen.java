@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -26,9 +27,137 @@ public class Examen {
 	private double force_freinage;
 	private double co;
 	
+	
+	@ManyToOne()
+	@JoinColumn(name = "id_user")
 	private Account account;
 	
+	@ManyToOne()
+	@JoinColumn(name = "immatriculation")
 	private Vehicule vehicule;
+	
+	
 	private boolean resultat;
+
+
+	public int getId_examen() {
+		return id_examen;
+	}
+
+
+	public void setId_examen(int id_examen) {
+		this.id_examen = id_examen;
+	}
+
+
+	public double getRipage() {
+		return ripage;
+	}
+
+
+	public void setRipage(double ripage) {
+		this.ripage = ripage;
+	}
+
+
+	public double getDissymetrie() {
+		return dissymetrie;
+	}
+
+
+	public void setDissymetrie(double dissymetrie) {
+		this.dissymetrie = dissymetrie;
+	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+	public double getForce_verticale() {
+		return force_verticale;
+	}
+
+
+	public void setForce_verticale(double force_verticale) {
+		this.force_verticale = force_verticale;
+	}
+
+
+	public double getDesequilibre() {
+		return desequilibre;
+	}
+
+
+	public void setDesequilibre(double desequilibre) {
+		this.desequilibre = desequilibre;
+	}
+
+
+	public double getForce_freinage() {
+		return force_freinage;
+	}
+
+
+	public void setForce_freinage(double force_freinage) {
+		this.force_freinage = force_freinage;
+	}
+
+
+	public double getCo() {
+		return co;
+	}
+
+
+	public void setCo(double co) {
+		this.co = co;
+	}
+
+
+	public Account getAccount() {
+		return account;
+	}
+
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+
+	public Vehicule getVehicule() {
+		return vehicule;
+	}
+
+
+	public void setVehicule(Vehicule vehicule) {
+		this.vehicule = vehicule;
+	}
+
+
+	public boolean isResultat() {
+		return resultat;
+	}
+
+
+	public void setResultat(boolean resultat) {
+		this.resultat = resultat;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Examen [id_examen=" + id_examen + ", ripage=" + ripage + ", dissymetrie=" + dissymetrie + ", date="
+				+ date + ", force_verticale=" + force_verticale + ", desequilibre=" + desequilibre + ", force_freinage="
+				+ force_freinage + ", co=" + co + ", account=" + account + ", vehicule=" + vehicule + ", resultat="
+				+ resultat + "]";
+	}
+	
+	
 	
 }
