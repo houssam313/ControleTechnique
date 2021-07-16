@@ -22,8 +22,8 @@ public class Bilan {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_bilan;
+
 	
-	private int id_typevehicule;
 	private double ripage_min;
 	private double ripage_max;
 	private double dissymetrie_min;
@@ -51,11 +51,11 @@ public class Bilan {
 	}
 
 
-	public Bilan(int id_typevehicule, double ripage_min, double ripage_max, double dissymetrie_min,
+	public Bilan(VehiculeType vehiculeType, double ripage_min, double ripage_max, double dissymetrie_min,
 			double dissymetrie_max, double force_verticale_min, double force_verticale_max, double desequilibre_min,
 			double desequilibre_max, double force_freinage_min, double force_freinage_max, double co_min, double co_max) {
 		super();
-		this.id_typevehicule = id_typevehicule;
+		this.vehiculeType= vehiculeType;
 		this.ripage_min = ripage_min;
 		this.ripage_max = ripage_max;
 		this.dissymetrie_min = dissymetrie_min;
@@ -81,15 +81,6 @@ public class Bilan {
 		this.id_bilan = id_bilan;
 	}
 
-
-	public int getId_typevehicule() {
-		return id_typevehicule;
-	}
-
-
-	public void setId_typevehicule(int id_typevehicule) {
-		this.id_typevehicule = id_typevehicule;
-	}
 
 
 	public double getRipage_min() {
@@ -212,20 +203,18 @@ public class Bilan {
 	}
 
 
-
-
 	@Override
 	public String toString() {
-		return "Bilan [id_bilan=" + id_bilan + ", id_typevehicule=" + id_typevehicule + ", ripage_min=" + ripage_min
-				+ ", ripage_max=" + ripage_max + ", dissymetrie_min=" + dissymetrie_min + ", dissymetrie_max="
-				+ dissymetrie_max + ", force_verticale_min=" + force_verticale_min + ", force_verticale_max="
-				+ force_verticale_max + ", desequilibre_min=" + desequilibre_min + ", desequilibre_max="
-				+ desequilibre_max + ", force_freinage_min=" + force_freinage_min + ", force_freinage_max="
-				+ force_freinage_max + ", co_min=" + co_min + ", co_max=" + co_max + ", vehiculeType=" + vehiculeType
-				+ "]";
+		return "Bilan [id_bilan=" + id_bilan + ", ripage_min=" + ripage_min + ", ripage_max=" + ripage_max
+				+ ", dissymetrie_min=" + dissymetrie_min + ", dissymetrie_max=" + dissymetrie_max
+				+ ", force_verticale_min=" + force_verticale_min + ", force_verticale_max=" + force_verticale_max
+				+ ", desequilibre_min=" + desequilibre_min + ", desequilibre_max=" + desequilibre_max
+				+ ", force_freinage_min=" + force_freinage_min + ", force_freinage_max=" + force_freinage_max
+				+ ", co_min=" + co_min + ", co_max=" + co_max + ", vehiculeType=" + vehiculeType + ", listPasser="
+				+ listPasser + "]";
 	}
-	
-	
-	
+
+
+
 
 }

@@ -16,23 +16,12 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Data
-public class AccountDTO {
+public class RecuDTO {
 
+	private double montant;
 	
-	private String password;
-	private UserroleDTO userroleDTO;
-	private StatusDTO statusDTO;	
-	private Set<RdvPrisDTO> listRdvprisDTO;	
-	private Set<ActionsDTO> listActionsDTO;
-	private Set<ExamenDTO> listExamenDTO;		
+	private String date;
 	
-	private String duree;
-	private String nom;
-	private String prenom;
-	private String tel;
-	private String email;
-	private String adresse;
-	
-	
-	
+	private ExamenDTO examenDTO;
+
 }
