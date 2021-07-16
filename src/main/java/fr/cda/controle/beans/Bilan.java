@@ -44,6 +44,32 @@ public class Bilan {
 	
 	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="bilan") 
 	private Set<Passer>  listPasser;
+	
+	
+	public Bilan() {
+		super();
+	}
+
+
+	public Bilan(int id_typevehicule, double ripage_min, double ripage_max, double dissymetrie_min,
+			double dissymetrie_max, double force_verticale_min, double force_verticale_max, double desequilibre_min,
+			double desequilibre_max, double force_freinage_min, double force_freinage_max, double co_min, double co_max) {
+		super();
+		this.id_typevehicule = id_typevehicule;
+		this.ripage_min = ripage_min;
+		this.ripage_max = ripage_max;
+		this.dissymetrie_min = dissymetrie_min;
+		this.dissymetrie_max = dissymetrie_max;
+		this.force_verticale_min = force_verticale_min;
+		this.force_verticale_max = force_verticale_max;
+		this.desequilibre_min = desequilibre_min;
+		this.desequilibre_max = desequilibre_max;
+		this.force_freinage_min = force_freinage_min;
+		this.force_freinage_max = force_freinage_max;
+		this.co_min = co_min;
+		this.co_max = co_max;
+
+	}
 
 
 	public int getId_bilan() {

@@ -1,5 +1,7 @@
 package fr.cda.controle.beans;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -38,6 +41,34 @@ public class Examen {
 	
 	
 	private boolean resultat;
+	
+	@OneToMany( fetch = FetchType.EAGER , mappedBy ="examen")
+	private Set<Recu> listRecu;
+
+	
+
+	public Examen( double ripage, double dissymetrie, String date, double force_verticale,
+			double desequilibre, double force_freinage, double co, Account account, Vehicule vehicule, boolean resultat
+			) {
+		super();
+		this.ripage = ripage;
+		this.dissymetrie = dissymetrie;
+		this.date = date;
+		this.force_verticale = force_verticale;
+		this.desequilibre = desequilibre;
+		this.force_freinage = force_freinage;
+		this.co = co;
+		this.account = account;
+		this.vehicule = vehicule;
+		this.resultat = resultat;
+	}
+
+	
+
+	public Examen() {
+		super();
+	}
+
 
 
 	public int getId_examen() {

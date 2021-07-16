@@ -22,6 +22,38 @@ public class ActionType {
 	
 	@OneToMany( fetch = FetchType.EAGER, mappedBy="id_actions.actionType")
 	private Set<Actions> listActions;
+
+	public ActionType() {
+		super();
+	}
+
+	public ActionType(String type_action) {
+		super();
+		this.type_action = type_action;
+		
+	}
+
+	public String getType_action() {
+		return type_action;
+	}
+
+	public void setType_action(String type_action) {
+		this.type_action = type_action;
+	}
+
+	public Set<Actions> getListActions() {
+		return listActions;
+	}
+
+	public void setListActions(Set<Actions> listActions) {
+		this.listActions = listActions;
+	}
+
+	@Override
+	public String toString() {
+		return "ActionType [id_action=" + id_action + ", type_action=" + type_action + ", listActions=" + listActions
+				+ "]";
+	}
 	
 	
 	

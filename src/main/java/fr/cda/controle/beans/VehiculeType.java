@@ -30,6 +30,20 @@ public class VehiculeType {
 	@JoinColumn(name = "id_typevehicule")
 	Bilan bilan;
 
+	
+	
+	
+	
+	public VehiculeType() {
+		super();
+	}
+
+	public VehiculeType(String type_vehicule, Bilan bilan) {
+		super();
+		this.type_vehicule = type_vehicule;
+		this.bilan = bilan;
+	}
+
 	public int getId_typevehicule() {
 		return id_typevehicule;
 	}

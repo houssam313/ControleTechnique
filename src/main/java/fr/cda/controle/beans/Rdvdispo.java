@@ -20,6 +20,16 @@ public class Rdvdispo {
 	private String duree;
 	
 	
+	public Rdvdispo() {
+		super();
+	}
+	public Rdvdispo( String jour, String debut_heure, String fin_heure, String duree) {
+		super();
+		this.jour = jour;
+		this.debut_heure = debut_heure;
+		this.fin_heure = fin_heure;
+		this.duree = duree;
+	}
 	public int getId_rdvdispo() {
 		return id_rdvdispo;
 	}

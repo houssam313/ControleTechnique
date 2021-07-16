@@ -39,6 +39,19 @@ public class RdvPris {
 	private String fin_heure;
 	
 	
+	public RdvPris() {
+		super();
+	}
+	
+	public RdvPris( Account account,  String immatriculation, String date,
+			String debut_heure, String fin_heure) {
+		super();
+		this.account = account;
+		this.immatriculation = immatriculation;
+		this.date = date;
+		this.debut_heure = debut_heure;
+		this.fin_heure = fin_heure;
+	}
 	public int getId_rdv() {
 		return id_rdv;
 	}

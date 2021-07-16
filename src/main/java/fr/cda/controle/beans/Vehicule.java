@@ -36,6 +36,28 @@ public class Vehicule {
 	private Set<Examen>  listExamen;
 
 
+	
+	
+	
+	public Vehicule() {
+		super();
+	}
+
+
+	public Vehicule(String immatriculation, String proprietaire, String date_mis_en_circulation, String annee,
+			String modele, int puissance, String carburant, VehiculeType vehiculeType) {
+		super();
+		this.immatriculation = immatriculation;
+		this.proprietaire = proprietaire;
+		this.date_mis_en_circulation = date_mis_en_circulation;
+		this.annee = annee;
+		this.modele = modele;
+		this.puissance = puissance;
+		this.carburant = carburant;
+		this.vehiculeType = vehiculeType;
+	}
+
+
 	public String getImmatriculation() {
 		return immatriculation;
 	}

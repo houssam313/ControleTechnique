@@ -13,8 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name="account")
 public class Account {
@@ -51,6 +49,24 @@ public class Account {
 	private String adresse;
 	
 	
+	public Account() {
+		super();
+	}
+	
+	
+	public Account(String password, Userrole userrole, Status status, String duree, String nom, String prenom, String tel,
+			String email, String adresse) {
+		super();
+		this.password = password;
+		this.userrole = userrole;
+		this.status = status;
+		this.duree = duree;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.tel = tel;
+		this.email = email;
+		this.adresse = adresse;
+	}
 	public String getId_user() {
 		return id_user;
 	}
@@ -127,7 +143,6 @@ public class Account {
 				+ ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", email=" + email + ", adresse=" + adresse
 				+ "]";
 	}
-	
 	
 	
 }

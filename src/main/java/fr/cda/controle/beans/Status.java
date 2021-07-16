@@ -30,6 +30,15 @@ public class Status {
 	
 	
 
+	public Status() {
+		super();
+	}
+
+	public Status(String type) {
+		super();
+		this.type = type;
+	}
+
 	public int getId_status() {
 		return id_status;
 	}

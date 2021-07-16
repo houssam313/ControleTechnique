@@ -16,6 +16,11 @@ import javax.persistence.Table;
 @Table(name="passer")
 public class Passer implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@OneToOne (cascade = CascadeType.ALL)
     @MapsId
@@ -28,6 +33,20 @@ public class Passer implements Serializable{
 	@ManyToOne()
 	@JoinColumn(name = "id_bilan")
 	private Bilan bilan;
+
+	
+	
+	
+	public Passer() {
+		super();
+	}
+
+	public Passer(Examen examen, Vehicule vehicule, Bilan bilan) {
+		super();
+		this.examen = examen;
+		this.vehicule = vehicule;
+		this.bilan = bilan;
+	}
 
 	public Examen getExamen() {
 		return examen;
@@ -51,6 +70,11 @@ public class Passer implements Serializable{
 
 	public void setBilan(Bilan bilan) {
 		this.bilan = bilan;
+	}
+
+	@Override
+	public String toString() {
+		return "Passer [examen=" + examen + ", vehicule=" + vehicule + ", bilan=" + bilan + "]";
 	}
 	
 	
