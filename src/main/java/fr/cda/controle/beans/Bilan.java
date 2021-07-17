@@ -72,6 +72,26 @@ public class Bilan {
 	}
 
 
+	public VehiculeType getVehiculeType() {
+		return vehiculeType;
+	}
+
+
+	public void setVehiculeType(VehiculeType vehiculeType) {
+		this.vehiculeType = vehiculeType;
+	}
+
+
+	public Set<Passer> getListPasser() {
+		return listPasser;
+	}
+
+
+	public void setListPasser(Set<Passer> listPasser) {
+		this.listPasser = listPasser;
+	}
+
+
 	public int getId_bilan() {
 		return id_bilan;
 	}

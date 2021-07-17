@@ -65,6 +65,37 @@ public class Account {
 		this.email = email;
 		this.adresse = adresse;
 	}
+	
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+
+	public Set<Actions> getListAction() {
+		return listAction;
+	}
+
+
+	public void setListAction(Set<Actions> listAction) {
+		this.listAction = listAction;
+	}
+
+
+	public Set<Examen> getListExamen() {
+		return listExamen;
+	}
+
+
+	public void setListExamen(Set<Examen> listExamen) {
+		this.listExamen = listExamen;
+	}
+
+
 	public String getId_user() {
 		return id_user;
 	}

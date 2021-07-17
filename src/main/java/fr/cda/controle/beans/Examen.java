@@ -69,6 +69,18 @@ public class Examen {
 
 
 
+	public Set<Recu> getListRecu() {
+		return listRecu;
+	}
+
+
+
+	public void setListRecu(Set<Recu> listRecu) {
+		this.listRecu = listRecu;
+	}
+
+
+
 	public int getId_examen() {
 		return id_examen;
 	}

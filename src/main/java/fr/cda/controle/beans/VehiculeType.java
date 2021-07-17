@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vehiculeType")
+@Table(name="vehiculetype")
 public class VehiculeType {
 
 	@Id
@@ -43,6 +43,14 @@ public class VehiculeType {
 
 	public int getId_typevehicule() {
 		return id_typevehicule;
+	}
+
+	public Set<Vehicule> getListVehicules() {
+		return listVehicules;
+	}
+
+	public void setListVehicules(Set<Vehicule> listVehicules) {
+		this.listVehicules = listVehicules;
 	}
 
 	public void setId_typevehicule(int id_typevehicule) {

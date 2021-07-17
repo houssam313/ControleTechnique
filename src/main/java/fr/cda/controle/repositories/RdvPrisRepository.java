@@ -9,7 +9,7 @@ import fr.cda.controle.beans.RdvPris;
 
 
 @Repository
-public interface RdvprisRepository extends JpaRepository<RdvPris, Integer> {
+public interface RdvPrisRepository extends JpaRepository<RdvPris, Integer> {
 
 	
 	

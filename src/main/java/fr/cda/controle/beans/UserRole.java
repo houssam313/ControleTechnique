@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="userRole")
+@Table(name="userrole")
 public class UserRole {
 
 	@Id
@@ -34,6 +34,7 @@ public class UserRole {
 		super();
 		this.role_user = role_user;
 	}
+	
 	public int getId_role() {
 		return id_role;
 	}

@@ -23,7 +23,6 @@ public class Status {
 	
 	private String type;
 	
-	
 	  @OneToMany( fetch = FetchType.EAGER, mappedBy="status")
 	  private Set<Account> listaccount;
 	 

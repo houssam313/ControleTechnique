@@ -25,6 +25,39 @@ public class IdActions implements Serializable {
 	private RdvPris rdvPris;
 	
 	private Date date;
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public ActionType getActionType() {
+		return actionType;
+	}
+
+	public void setActionType(ActionType actionType) {
+		this.actionType = actionType;
+	}
+
+	public RdvPris getRdvPris() {
+		return rdvPris;
+	}
+
+	public void setRdvPris(RdvPris rdvPris) {
+		this.rdvPris = rdvPris;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 }
 
 
