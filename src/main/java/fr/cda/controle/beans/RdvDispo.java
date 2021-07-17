@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rdvdispo")
-public class Rdvdispo {
+@Table(name="rdvDispo")
+public class RdvDispo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_rdvdispo;
+	private int id_rdvDispo;
 	
 	private String jour;
 	private String debut_heure;
@@ -20,21 +20,21 @@ public class Rdvdispo {
 	private String duree;
 	
 	
-	public Rdvdispo() {
+	public RdvDispo() {
 		super();
 	}
-	public Rdvdispo( String jour, String debut_heure, String fin_heure, String duree) {
+	public RdvDispo( String jour, String debut_heure, String fin_heure, String duree) {
 		super();
 		this.jour = jour;
 		this.debut_heure = debut_heure;
 		this.fin_heure = fin_heure;
 		this.duree = duree;
 	}
-	public int getId_rdvdispo() {
-		return id_rdvdispo;
+	public int getId_rdvDispo() {
+		return id_rdvDispo;
 	}
-	public void setId_rdvdispo(int id_rdvdispo) {
-		this.id_rdvdispo = id_rdvdispo;
+	public void setId_rdvDispo(int id_rdvDispo) {
+		this.id_rdvDispo = id_rdvDispo;
 	}
 	public String getJour() {
 		return jour;
@@ -62,7 +62,7 @@ public class Rdvdispo {
 	}
 	@Override
 	public String toString() {
-		return "Rdvdispo [id_rdvdispo=" + id_rdvdispo + ", jour=" + jour + ", debut_heure=" + debut_heure
+		return "rdvDispo [id_rdvDispo=" + id_rdvDispo + ", jour=" + jour + ", debut_heure=" + debut_heure
 				+ ", fin_heure=" + fin_heure + ", duree=" + duree + "]";
 	}
 	

@@ -21,7 +21,6 @@ public class Examen {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_examen;
 	
-	
 	private double ripage;
 	private double dissymetrie;
 	private String date;
@@ -29,7 +28,6 @@ public class Examen {
 	private double desequilibre;
 	private double force_freinage;
 	private double co;
-	
 	
 	@ManyToOne()
 	@JoinColumn(name = "id_user")

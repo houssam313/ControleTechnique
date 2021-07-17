@@ -6,7 +6,7 @@ import java.util.Set;
 import lombok.Data;
 
 @Data
-public class UserroleDTO {
+public class UserRoleDTO {
 
 
 	private String role_user;

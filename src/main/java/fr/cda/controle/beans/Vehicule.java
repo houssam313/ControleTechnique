@@ -29,7 +29,7 @@ public class Vehicule {
 	@JoinColumn( name="id_typevehicule")
 	private VehiculeType  vehiculeType;
 	
-	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="vehicule") 
+	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="id_passer.vehicule") 
 	private Set<Passer>  listPasser;
 	
 	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="vehicule") 

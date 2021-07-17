@@ -3,8 +3,8 @@ package fr.cda.controle.converter;
 
 import org.springframework.stereotype.Component;
 
-import fr.cda.controle.beans.Userrole;
-import fr.cda.controle.dto.UserroleDTO;
+import fr.cda.controle.beans.RdvDispo;
+import fr.cda.controle.dto.RdvDispoDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,22 +13,22 @@ import org.modelmapper.ModelMapper;
 
 
 @Component
-public class UserroleConverter {
+public class RdvDispoConverter {
 
-	public  UserroleDTO EntityToDTO(Userrole s) {
+	public  RdvDispoDTO EntityToDTO(RdvDispo s) {
 		ModelMapper mapper = new ModelMapper();
-		UserroleDTO map = mapper.map(s, UserroleDTO.class);
+		RdvDispoDTO map = mapper.map(s, RdvDispoDTO.class);
 		return map;
 	}
-	public List<UserroleDTO> EntityToDTO(List<Userrole> s) {
+	public List<RdvDispoDTO> EntityToDTO(List<RdvDispo> s) {
 		return s.stream().map(x -> EntityToDTO(x)).collect(Collectors.toList());
 	}
-	public Userrole dTOToEntity(UserroleDTO s) {
+	public RdvDispo dTOToEntity(RdvDispoDTO s) {
 		ModelMapper mapper = new ModelMapper();
-		Userrole map = mapper.map(s, Userrole.class);
+		RdvDispo map = mapper.map(s, RdvDispo.class);
 		return map;
 	}
-	public List<Userrole> dTOToEntity(List<UserroleDTO> s) {
+	public List<RdvDispo> dTOToEntity(List<RdvDispoDTO> s) {
 		return s.stream().map(x -> dTOToEntity(x)).collect(Collectors.toList());
 	}
 }

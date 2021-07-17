@@ -12,25 +12,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="userrole")
-public class Userrole {
+@Table(name="userRole")
+public class UserRole {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_role;
 	private String role_user;
 	
-	@OneToMany( fetch = FetchType.EAGER , mappedBy="userrole")
+	@OneToMany( fetch = FetchType.EAGER , mappedBy="userRole")
 	private Set<Account> listaccount;
 	
 	
 	
 	
 	
-	public Userrole() {
+	public UserRole() {
 		super();
 	}
-	public Userrole(String role_user) {
+	public UserRole(String role_user) {
 		super();
 		this.role_user = role_user;
 	}

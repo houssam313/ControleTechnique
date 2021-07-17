@@ -17,15 +17,8 @@ import lombok.Data;
 @Data
 public class PasserDTO implements Serializable{
 
-	
 	private ExamenDTO examenDTO;
-
 	private VehiculeDTO vehiculeDTO;
-
-
 	private BilanDTO bilanDTO;
-
-	
-	
 	
 }

@@ -39,10 +39,10 @@ public class Bilan {
 	
 	
 	@OneToOne( fetch = FetchType.EAGER)
-	@JoinColumn(name ="bilan")
+	@JoinColumn(name ="id_typevehicule")
 	VehiculeType vehiculeType;
 	
-	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="bilan") 
+	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="id_passer.bilan") 
 	private Set<Passer>  listPasser;
 	
 	

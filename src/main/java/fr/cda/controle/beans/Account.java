@@ -1,7 +1,6 @@
 package fr.cda.controle.beans;
 
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +23,7 @@ public class Account {
 	
 	@ManyToOne (cascade = CascadeType.REMOVE) 
 	@JoinColumn( name="id_role")
-	private Userrole userrole;
+	private UserRole userRole;
 	
 	@ManyToOne (cascade = CascadeType.REMOVE) 
 	@JoinColumn( name="id_status")
@@ -36,7 +34,7 @@ public class Account {
 	
 	
 	@OneToMany( fetch = FetchType.EAGER , mappedBy ="id_actions.account")
-	private Set<Actions> listActions;
+	private Set<Actions> listAction;
 	
 	@OneToMany( fetch = FetchType.EAGER , mappedBy ="account")
 	private Set<Examen> listExamen;		
@@ -54,11 +52,11 @@ public class Account {
 	}
 	
 	
-	public Account(String password, Userrole userrole, Status status, String duree, String nom, String prenom, String tel,
+	public Account(String password, UserRole userrole, Status status, String duree, String nom, String prenom, String tel,
 			String email, String adresse) {
 		super();
 		this.password = password;
-		this.userrole = userrole;
+		this.userRole = userrole;
 		this.status = status;
 		this.duree = duree;
 		this.nom = nom;
@@ -125,11 +123,11 @@ public class Account {
 	
 	
 	
-	public Userrole getUserrole() {
-		return userrole;
+	public UserRole getUserrole() {
+		return userRole;
 	}
-	public void setUserrole(Userrole userrole) {
-		this.userrole = userrole;
+	public void setUserrole(UserRole userRole) {
+		this.userRole = userRole;
 	}
 	public Set<RdvPris> getListRdvpris() {
 		return listRdvpris;
@@ -139,7 +137,7 @@ public class Account {
 	}
 	@Override
 	public String toString() {
-		return "Account [id_user=" + id_user + ", userrole=" + userrole + ", status=" + status + ", duree=" + duree
+		return "Account [id_user=" + id_user + ", userrole=" + userRole + ", status=" + status + ", duree=" + duree
 				+ ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", email=" + email + ", adresse=" + adresse
 				+ "]";
 	}

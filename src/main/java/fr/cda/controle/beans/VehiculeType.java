@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vehiculetype")
+@Table(name="vehiculeType")
 public class VehiculeType {
 
 	@Id
@@ -29,9 +29,6 @@ public class VehiculeType {
 	@OneToOne( fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_typevehicule")
 	Bilan bilan;
-
-	
-	
 	
 	
 	public VehiculeType() {
