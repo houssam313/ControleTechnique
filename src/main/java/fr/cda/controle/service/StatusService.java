@@ -19,8 +19,8 @@ public class StatusService {
 	@Autowired
 	private StatusConverter statusConverter;
 
-	public StatusDTO getStatus(int id) {
-		return statusConverter.EntityToDTO(statusRepository.findById(id).get());
+	public StatusDTO getStatus(String type ) {
+		return statusConverter.EntityToDTO(statusRepository.findByType(type));
 	}
 
 	public List<StatusDTO> getAllStatus() {	
@@ -38,13 +38,11 @@ public class StatusService {
 	}
 
 	public Status update(int id,StatusDTO statusDTO) {
-		
 		Status status = statusConverter.dTOToEntity(statusDTO);
-		
-		 statusRepository.save(status);
-		return status;
-		
-	
+		Status statusplus = statusRepository.findById(id).get();
+		statusplus.setType(status.getType());
+		statusRepository.save(statusplus);
+		return statusplus;
 	}
 	
 	

@@ -18,6 +18,7 @@ public class UserRoleConverter {
 	public  UserRoleDTO EntityToDTO(UserRole s) {
 		ModelMapper mapper = new ModelMapper();
 		UserRoleDTO map = mapper.map(s, UserRoleDTO.class);
+		System.out.println(map);
 		return map;
 	}
 	public List<UserRoleDTO> EntityToDTO(List<UserRole> s) {

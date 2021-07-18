@@ -31,9 +31,9 @@ public class StatusController {
 	private StatusService statusService;
 	
 	
-	@GetMapping("/status/{id}")
-	public StatusDTO getStatus(@PathVariable("id") int id) {
-		StatusDTO statusDTO = statusService.getStatus(id);
+	@GetMapping("/status/{type}")
+	public StatusDTO getStatus(@PathVariable("type") String type) {
+		StatusDTO statusDTO = statusService.getStatus(type);
 		return statusDTO;
 	}
 	
@@ -49,7 +49,7 @@ public class StatusController {
 	}
 	
 	@PutMapping("/updateStatus/{id}")
-	public Status updateStatus(@PathVariable("id") int id,@RequestBody StatusDTO statusDTO) {
+	public Status updateStatus(@PathVariable("id") int id, @RequestBody StatusDTO statusDTO) {
 		return statusService.update(id,statusDTO);
 	}
 	

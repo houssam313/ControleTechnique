@@ -10,6 +10,8 @@ import fr.cda.controle.beans.Status;
 @Repository
 public interface StatusRepository extends JpaRepository<Status, Integer> {
 
+	Status findByType(String type);
+
 	
 	
 }
