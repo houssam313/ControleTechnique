@@ -14,9 +14,10 @@ public class AccountDTO {
 	private String userRole;
 	private String status;
 	
-	private Set<RdvPrisDTO> listRdvprisDTO;
-	private Set<ActionsDTO> listActionDTO;
-	private Set<ExamenDTO> listExamenDTO;
+	private Set<RdvPrisDTO> listRdvpris;
+	private Set<ExamenDTO> listExamen;
+
+
 
 	private String duree;
 	private String nom;
@@ -44,7 +45,21 @@ public class AccountDTO {
 	}
 
 
+	public Set<RdvPrisDTO> getListRdvpris() {
+		return listRdvpris;
+	}
 
+	public void setListRdvpris(Set<RdvPrisDTO> listRdvpris) {
+		this.listRdvpris = listRdvpris;
+	}
+
+	public Set<ExamenDTO> getListExamen() {
+		return listExamen;
+	}
+
+	public void setListExamen(Set<ExamenDTO> listExamen) {
+		this.listExamen = listExamen;
+	}
 
 
 	public String getPassword() {
@@ -92,29 +107,6 @@ public class AccountDTO {
 
 
 
-	public Set<RdvPrisDTO> getListRdvprisDTO() {
-		return listRdvprisDTO;
-	}
-
-	public void setListRdvprisDTO(Set<RdvPrisDTO> listRdvprisDTO) {
-		this.listRdvprisDTO = listRdvprisDTO;
-	}
-
-	public Set<ActionsDTO> getListActionDTO() {
-		return listActionDTO;
-	}
-
-	public void setListActionDTO(Set<ActionsDTO> listActionDTO) {
-		this.listActionDTO = listActionDTO;
-	}
-
-	public Set<ExamenDTO> getListExamenDTO() {
-		return listExamenDTO;
-	}
-
-	public void setListExamenDTO(Set<ExamenDTO> listExamenDTO) {
-		this.listExamenDTO = listExamenDTO;
-	}
 
 	public String getDuree() {
 		return duree;
