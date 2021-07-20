@@ -61,6 +61,11 @@ public class UserRole {
 		this.listaccount = listaccount;
 	}
 
+	@Override
+	public String toString() {
+		return  role ;
+	}
+
 
 	
 	

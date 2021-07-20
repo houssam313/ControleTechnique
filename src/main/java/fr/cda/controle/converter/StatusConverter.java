@@ -20,14 +20,24 @@ public class StatusConverter {
 		StatusDTO map = mapper.map(s, StatusDTO.class);
 		return map;
 	}
+	
+	
 	public List<StatusDTO> EntityToDTO(List<Status> s) {
+		
 		return s.stream().map(x -> EntityToDTO(x)).collect(Collectors.toList());
 	}
+	
+	
+	
 	public Status dTOToEntity(StatusDTO s) {
 		ModelMapper mapper = new ModelMapper();
 		Status map = mapper.map(s, Status.class);
 		return map;
 	}
+	
+	
+	
+	
 	public List<Status> dTOToEntity(List<StatusDTO> s) {
 		return s.stream().map(x -> dTOToEntity(x)).collect(Collectors.toList());
 	}

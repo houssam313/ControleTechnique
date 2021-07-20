@@ -5,27 +5,32 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 @Entity
 @Table(name="account")
+@Transactional
 public class Account {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id_user;
 	
 	@Column(name="mot_de_passe")
 	private String password;
 	
-	@ManyToOne (cascade = CascadeType.REMOVE) 
+	@ManyToOne () 
 	@JoinColumn( name="id_role")
 	private UserRole userRole;
 	
-	@ManyToOne (cascade = CascadeType.REMOVE) 
+	@ManyToOne () 
 	@JoinColumn( name="id_status")
 	private Status status;
 		
@@ -166,12 +171,18 @@ public class Account {
 	public void setListRdvpris(Set<RdvPris> listRdvpris) {
 		this.listRdvpris = listRdvpris;
 	}
+
+
 	@Override
 	public String toString() {
-		return "Account [id_user=" + id_user + ", userrole=" + userRole + ", status=" + status + ", duree=" + duree
-				+ ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", email=" + email + ", adresse=" + adresse
-				+ "]";
+		return "Account [id_user=" + id_user + ", password=" + password + ", userRole=" + userRole.toString() + ", status="
+				+ status.toString() + ", duree=" + duree + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", email="
+				+ email + ", adresse=" + adresse + "]";
 	}
+
+
+	
+	
 	
 	
 }
