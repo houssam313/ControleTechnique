@@ -18,7 +18,7 @@ public class ActionType {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_action;
 	
-	private String type_action;
+	private String type;
 	
 	@OneToMany( fetch = FetchType.EAGER, mappedBy="id_actions.actionType")
 	private Set<Actions> listActions;
@@ -27,18 +27,34 @@ public class ActionType {
 		super();
 	}
 
+	public int getId_action() {
+		return id_action;
+	}
+
+	public void setId_action(int id_action) {
+		this.id_action = id_action;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public ActionType(String type_action) {
 		super();
-		this.type_action = type_action;
+		this.type = type_action;
 		
 	}
 
 	public String getType_action() {
-		return type_action;
+		return type;
 	}
 
 	public void setType_action(String type_action) {
-		this.type_action = type_action;
+		this.type = type_action;
 	}
 
 	public Set<Actions> getListActions() {
@@ -51,7 +67,7 @@ public class ActionType {
 
 	@Override
 	public String toString() {
-		return "ActionType [id_action=" + id_action + ", type_action=" + type_action + ", listActions=" + listActions
+		return "ActionType [id_action=" + id_action + ", type_action=" + type + ", listActions=" + listActions
 				+ "]";
 	}
 	

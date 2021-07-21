@@ -16,6 +16,10 @@ public interface AccountRepository extends JpaRepository<Account, String> {
 	@Transactional
 	void deleteByEmail(String email);
 
+	Account findByNom(String nom);
+
+	
+
 	
 	
 }

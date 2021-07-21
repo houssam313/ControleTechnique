@@ -3,7 +3,7 @@ package fr.cda.controle.errors;
 public class NotFoundException extends Exception {
 
     public NotFoundException() {
-        super("Status not found");
+        super("Not found");
     }
 
     public NotFoundException(String message, Throwable cause) {

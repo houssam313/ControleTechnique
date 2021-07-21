@@ -11,6 +11,8 @@ import fr.cda.controle.beans.ActionType;
 @Repository
 public interface ActionTypeRepository extends JpaRepository<ActionType, Integer> {
 
+	ActionType findByType(String type);
+
 	
 	
 }

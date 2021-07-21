@@ -3,7 +3,7 @@ package fr.cda.controle.beans;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,10 +21,11 @@ public class RdvPris {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_rdv;
+	@Column(name="id_rdv")
+	private int id;
 	
 	
-	@ManyToOne (cascade = CascadeType.REMOVE) 
+	@ManyToOne () 
 	@JoinColumn( name="id_user", nullable = false)
 	private Account account;
 
@@ -53,10 +54,10 @@ public class RdvPris {
 		this.fin_heure = fin_heure;
 	}
 	public int getId_rdv() {
-		return id_rdv;
+		return id;
 	}
 	public void setId_rdv(int id_rdv) {
-		this.id_rdv = id_rdv;
+		this.id = id_rdv;
 	}
 	public Account getAccount() {
 		return account;
@@ -90,7 +91,7 @@ public class RdvPris {
 	}
 	@Override
 	public String toString() {
-		return "Rdvpris [id_rdv=" + id_rdv + ", account=" + account + ", immatriculation=" + immatriculation + ", date="
+		return "Rdvpris [id_rdv=" + id+ ", account=" + account + ", immatriculation=" + immatriculation + ", date="
 				+ date + ", debut_heure=" + debut_heure + ", fin_heure=" + fin_heure + "]";
 	}
 	
