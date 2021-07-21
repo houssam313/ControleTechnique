@@ -17,11 +17,46 @@ import lombok.Data;
 public class ActionsDTO {
 
 	
-	private AccountDTO accountDTO;
-	private ActionTypeDTO actionTypeDTO;
-	private RdvPrisDTO rdvPrisDTO;
+	private String email;
+	private String type;
+	private int id;
 	private Date date;
 	private String motif;
+	
+	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public String getMotif() {
+		return motif;
+	}
+	public void setMotif(String motif) {
+		this.motif = motif;
+	}
+	
 	
 	
 }
