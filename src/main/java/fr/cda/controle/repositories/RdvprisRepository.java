@@ -11,6 +11,10 @@ import fr.cda.controle.beans.Rdvpris;
 @Repository
 public interface RdvprisRepository extends JpaRepository<Rdvpris, Integer> {
 
+	Rdvpris findByImmatriculation(String type);
+
+	
+
 	
 	
 }

@@ -27,7 +27,7 @@ public class Rdvprisconverter {
 
 	}
 	
-	public  Rdvpris dTOToEntity(RdvdispoDTO d) {
+	public  Rdvpris dTOToEntity(RdvprisDTO d) {
 		ModelMapper mapper = new ModelMapper();
 		 Rdvpris  map = mapper.map(d,  Rdvpris .class);
 		return map;
