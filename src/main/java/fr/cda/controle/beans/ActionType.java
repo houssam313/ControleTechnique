@@ -67,8 +67,8 @@ public class ActionType {
 
 	@Override
 	public String toString() {
-		return "ActionType [id_action=" + id_action + ", type_action=" + type + ", listActions=" + listActions
-				+ "]";
+		return "ActionType =" + type ;
+				
 	}
 	
 	

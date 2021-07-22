@@ -3,6 +3,8 @@ package fr.cda.controle.beans;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
+
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,18 +26,39 @@ public class IdActions implements Serializable {
 	@JoinColumn(name = "id_rdv")
 	private RdvPris rdvPris;
 	
+	private LocalDate date;
 	
 
-	public IdActions(Account account, ActionType actionType, RdvPris rdvPris) {
+	
+
+	public IdActions(Account account, ActionType actionType, RdvPris rdvPris, LocalDate date) {
 		super();
 		this.account = account;
 		this.actionType = actionType;
 		this.rdvPris = rdvPris;
+		this.date = date;
 	}
+
+
+
 
 	public IdActions() {
 		super();
 	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+
+
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+
+
 
 	public Account getAccount() {
 		return account;
@@ -59,6 +82,15 @@ public class IdActions implements Serializable {
 
 	public void setRdvPris(RdvPris rdvPris) {
 		this.rdvPris = rdvPris;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "IdActions [account=" + account + ", actionType=" + actionType + ", rdvPris=" + rdvPris + ", date="
+				+ date + "]";
 	}
 
 

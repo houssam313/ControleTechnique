@@ -9,20 +9,11 @@ import javax.persistence.Table;
 public class Actions {
 
 	@EmbeddedId
-	private IdActions  id_actions;
-	
-	private String date;
+	private IdActions  id_actions;	
 	
 	
 	private String motif;
 	
-	
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
 	public Actions(IdActions id_actions, String motif) {
 		super();
 		this.id_actions = id_actions;

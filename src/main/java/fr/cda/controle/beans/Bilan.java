@@ -4,6 +4,7 @@ package fr.cda.controle.beans;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,8 @@ public class Bilan {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_bilan;
+	@Column(name="id_bilan")
+	private int id;
 
 	
 	private double ripage_min;
@@ -92,15 +94,17 @@ public class Bilan {
 	}
 
 
-	public int getId_bilan() {
-		return id_bilan;
+	
+
+
+	public int getId() {
+		return id;
 	}
 
 
-	public void setId_bilan(int id_bilan) {
-		this.id_bilan = id_bilan;
+	public void setId(int id) {
+		this.id = id;
 	}
-
 
 
 	public double getRipage_min() {
@@ -225,7 +229,7 @@ public class Bilan {
 
 	@Override
 	public String toString() {
-		return "Bilan [id_bilan=" + id_bilan + ", ripage_min=" + ripage_min + ", ripage_max=" + ripage_max
+		return "Bilan [id_bilan=" + id + ", ripage_min=" + ripage_min + ", ripage_max=" + ripage_max
 				+ ", dissymetrie_min=" + dissymetrie_min + ", dissymetrie_max=" + dissymetrie_max
 				+ ", force_verticale_min=" + force_verticale_min + ", force_verticale_max=" + force_verticale_max
 				+ ", desequilibre_min=" + desequilibre_min + ", desequilibre_max=" + desequilibre_max

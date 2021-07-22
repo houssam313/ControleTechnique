@@ -2,6 +2,7 @@ package fr.cda.controle.beans;
 
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,9 +19,11 @@ public class VehiculeType {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_typevehicule;
+	@Column(name="id_typevehicule")
+	private int id;
 	
-	private String type_vehicule;
+	@Column(name="type_vehicule")
+	private String type;
 	
 	@OneToMany( fetch = FetchType.EAGER, mappedBy="vehiculeType")
 	private Set<Vehicule> listVehicules;
@@ -37,13 +40,11 @@ public class VehiculeType {
 
 	public VehiculeType(String type_vehicule, Bilan bilan) {
 		super();
-		this.type_vehicule = type_vehicule;
+		this.type = type_vehicule;
 		this.bilan = bilan;
 	}
 
-	public int getId_typevehicule() {
-		return id_typevehicule;
-	}
+
 
 	public Set<Vehicule> getListVehicules() {
 		return listVehicules;
@@ -53,16 +54,21 @@ public class VehiculeType {
 		this.listVehicules = listVehicules;
 	}
 
-	public void setId_typevehicule(int id_typevehicule) {
-		this.id_typevehicule = id_typevehicule;
+	
+	public int getId() {
+		return id;
 	}
 
-	public String getType_vehicule() {
-		return type_vehicule;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setType_vehicule(String type_vehicule) {
-		this.type_vehicule = type_vehicule;
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type_vehicule) {
+		this.type = type_vehicule;
 	}
 
 
@@ -84,7 +90,7 @@ public class VehiculeType {
 
 	@Override
 	public String toString() {
-		return "VehiculeType [id_typevehicule=" + id_typevehicule + ", type_vehicule=" + type_vehicule
+		return "VehiculeType [id_typevehicule=" + id + ", type_vehicule=" + type
 				+ "]";
 	}
 	

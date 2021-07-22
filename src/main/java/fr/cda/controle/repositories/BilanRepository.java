@@ -10,6 +10,8 @@ import fr.cda.controle.beans.Bilan;
 @Repository
 public interface BilanRepository extends JpaRepository<Bilan, Integer> {
 
+	Bilan findByVehiculeType(int id);
+
 	
 	
 }

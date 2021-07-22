@@ -1,4 +1,4 @@
-package fr.cda.controle;
+package fr.cda.controle.controller;
 
 
 import java.util.List;
@@ -24,7 +24,7 @@ public class ActionsController {
 	@Autowired
 	private ActionsService actionsService;
 	
-	// get action by sending IdActions(iduser,idactiontype,idrdv)
+	// get action by sending IdActions(iduser,idactiontype,idrdv,date(string))
 	@PostMapping("/action")
 	public ActionsDTO getActionType(@RequestBody IdActionsDTO id ) throws NotFoundException {
 		ActionsDTO actionDTO = actionsService.getAction(id);
@@ -39,13 +39,18 @@ public class ActionsController {
 		return listactionsDTO;
 	}
 	
-	@PostMapping("/addAction")
-	public ActionsDTO addAction(@RequestBody ActionsDTO action)
-	{
-		actionsService.addAction(action);
-		return action;
-	}
 	
-
+	/* send dto   {
+		    "id_user": "1",
+		    "id_action": 1,
+		    "id_rdv": 1,
+		    "date": "2025-03-22",
+		    "motif": "neant"
+	}*/
+	@PostMapping("/addAction")
+	public ActionsDTO addAction(@RequestBody ActionsDTO actionDTO) {
+		actionsService.addAction(actionDTO);
+		return actionDTO;
+	}
 	 
 }
