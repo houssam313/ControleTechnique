@@ -14,16 +14,11 @@ import fr.cda.controle.beans.RdvPris;
 import lombok.Data;
 
 @Data
-public class ActionsDTO {
+public class IdActionsDTO {
 
-	
 	private String id_user;
 	private int id_action;
 	private int id_rdv;
-	private String date;
-	private String motif;
-	
-	
 	public String getId_user() {
 		return id_user;
 	}
@@ -43,21 +38,6 @@ public class ActionsDTO {
 		this.id_rdv = id_rdv;
 	}
 
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public String getMotif() {
-		return motif;
-	}
-	public void setMotif(String motif) {
-		this.motif = motif;
-	}
-	
-	
-	
 	
 	
 }

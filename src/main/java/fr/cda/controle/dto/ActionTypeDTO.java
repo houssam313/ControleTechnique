@@ -1,6 +1,5 @@
 package fr.cda.controle.dto;
 
-import java.util.Set;
 
 import lombok.Data;
 
@@ -12,7 +11,7 @@ public class ActionTypeDTO {
 	
 	private String type;
 	
-	private Set<ActionsDTO> listActions;
+
 
 	public int getId_action() {
 		return id_action;
@@ -30,13 +29,7 @@ public class ActionTypeDTO {
 		this.type = type;
 	}
 
-	public Set<ActionsDTO> getListActions() {
-		return listActions;
-	}
 
-	public void setListActions(Set<ActionsDTO> listActions) {
-		this.listActions = listActions;
-	}
 
 	
 }

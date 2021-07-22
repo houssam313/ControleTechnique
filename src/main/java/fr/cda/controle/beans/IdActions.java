@@ -24,7 +24,18 @@ public class IdActions implements Serializable {
 	@JoinColumn(name = "id_rdv")
 	private RdvPris rdvPris;
 	
-	private Date date;
+	
+
+	public IdActions(Account account, ActionType actionType, RdvPris rdvPris) {
+		super();
+		this.account = account;
+		this.actionType = actionType;
+		this.rdvPris = rdvPris;
+	}
+
+	public IdActions() {
+		super();
+	}
 
 	public Account getAccount() {
 		return account;
@@ -50,13 +61,10 @@ public class IdActions implements Serializable {
 		this.rdvPris = rdvPris;
 	}
 
-	public Date getDate() {
-		return date;
-	}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+
+
+
 	
 }
 

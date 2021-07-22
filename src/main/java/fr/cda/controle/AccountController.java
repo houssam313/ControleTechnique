@@ -23,8 +23,8 @@ public class AccountController {
 	@Autowired
 	private AccountService AccountService;
 
-	@GetMapping("/account/{account}")
-	public AccountDTO getAccount(@PathVariable("account") String a) throws NotFoundException {
+	@GetMapping("/account/{email}")
+	public AccountDTO getAccount(@PathVariable("email") String a) throws NotFoundException {
 		AccountDTO accountDTO = AccountService.getAccount(a);
 		return accountDTO;
 	}

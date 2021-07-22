@@ -18,6 +18,9 @@ public class ActionsConverter {
 	public  ActionsDTO EntityToDTO(Actions s) {
 		ModelMapper mapper = new ModelMapper();
 		ActionsDTO map = mapper.map(s, ActionsDTO.class);
+		map.setId_user(s.getId_actions().getAccount().getId_user());
+		map.setId_action(s.getId_actions().getActionType().getId_action());
+		map.setId_rdv(s.getId_actions().getRdvPris().getId_rdv());
 		return map;
 	}
 	public List<ActionsDTO> EntityToDTO(List<Actions> s) {
