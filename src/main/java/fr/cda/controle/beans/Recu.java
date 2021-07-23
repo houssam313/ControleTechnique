@@ -1,7 +1,9 @@
 package fr.cda.controle.beans;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,13 +14,15 @@ import javax.persistence.Table;
 public class Recu {
 
 	@Id
-	private String id_recu;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_recu")
+	private int id;
 	
 	private double montant;
 	
 	private String date;
 	
-	@ManyToOne (cascade = CascadeType.REMOVE) 
+	@ManyToOne () 
 	@JoinColumn( name="id_examen")
 	private Examen examen;
 
@@ -34,12 +38,15 @@ public class Recu {
 		this.examen = examen;
 	}
 
-	public String getId_recu() {
-		return id_recu;
+	
+
+
+	public int getId() {
+		return id;
 	}
 
-	public void setId_recu(String id_recu) {
-		this.id_recu = id_recu;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public double getMontant() {
@@ -68,7 +75,7 @@ public class Recu {
 
 	@Override
 	public String toString() {
-		return "Recu [id_recu=" + id_recu + ", montant=" + montant + ", date=" + date + ", examen=" + examen + "]";
+		return "Recu [id_recu=" + id + ", montant=" + montant + ", date=" + date + ", examen=" + examen + "]";
 	}
 		
 		

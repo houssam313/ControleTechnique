@@ -26,6 +26,19 @@ public class IdPasser implements Serializable {
 	@JoinColumn(name = "id_bilan")
 	private Bilan bilan;
 
+	
+	
+	public IdPasser() {
+		super();
+	}
+
+	public IdPasser(Examen examen, Vehicule vehicule, Bilan bilan) {
+		super();
+		this.examen = examen;
+		this.vehicule = vehicule;
+		this.bilan = bilan;
+	}
+
 	public Examen getExamen() {
 		return examen;
 	}
