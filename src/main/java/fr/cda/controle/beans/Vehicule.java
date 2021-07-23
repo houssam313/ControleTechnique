@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,19 +26,16 @@ public class Vehicule {
 	private int puissance;
 	private String carburant;
 	
-	@ManyToOne (cascade = CascadeType.REMOVE) 
+	@ManyToOne () 
 	@JoinColumn( name="id_typevehicule")
 	private VehiculeType  vehiculeType;
 	
-	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="id_passer.vehicule") 
+	@OneToMany (fetch = FetchType.EAGER , mappedBy="id_passer.vehicule") 
 	private Set<Passer>  listPasser;
 	
-	@OneToMany (cascade = CascadeType.REMOVE, mappedBy="vehicule") 
+	@OneToMany (fetch = FetchType.EAGER , mappedBy="vehicule") 
 	private Set<Examen>  listExamen;
 
-
-	
-	
 	
 	public Vehicule() {
 		super();
@@ -138,32 +136,13 @@ public class Vehicule {
 	}
 
 
-	public Set<Passer> getListPasser() {
-		return listPasser;
-	}
-
-
-	public void setListPasser(Set<Passer> listPasser) {
-		this.listPasser = listPasser;
-	}
-
-
-	public Set<Examen> getListExamen() {
-		return listExamen;
-	}
-
-
-	public void setListExamen(Set<Examen> listExamen) {
-		this.listExamen = listExamen;
-	}
-
 
 	@Override
 	public String toString() {
 		return "Vehicule [immatriculation=" + immatriculation + ", proprietaire=" + proprietaire
 				+ ", date_mis_en_circulation=" + date_mis_en_circulation + ", annee=" + annee + ", modele=" + modele
-				+ ", puissance=" + puissance + ", carburant=" + carburant + ", vehiculeType=" + vehiculeType
-				+ ", listPasser=" + listPasser + ", listExamen=" + listExamen + "]";
+				+ ", puissance=" + puissance + ", carburant=" + carburant 
+				+ "]";
 	}
 	
 	

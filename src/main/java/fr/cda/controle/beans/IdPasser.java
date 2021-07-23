@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 @Embeddable
 public class IdPasser implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	
 
 	@OneToOne()
 	@JoinColumn(name = "id_examen")

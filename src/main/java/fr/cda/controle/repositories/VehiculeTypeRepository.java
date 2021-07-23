@@ -8,6 +8,8 @@ import fr.cda.controle.beans.VehiculeType;
 @Repository
 public interface VehiculeTypeRepository extends JpaRepository<VehiculeType, Integer> {
 
+	VehiculeType findByType(String vehiculeType);
+
 	
 	
 }

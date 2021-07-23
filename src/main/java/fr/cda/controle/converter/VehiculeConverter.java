@@ -18,6 +18,7 @@ public class VehiculeConverter {
 	public  VehiculeDTO EntityToDTO(Vehicule s) {
 		ModelMapper mapper = new ModelMapper();
 		VehiculeDTO map = mapper.map(s, VehiculeDTO.class);
+		map.setVehiculeType(s.getVehiculeType().getType());
 		return map;
 	}
 	public List<VehiculeDTO> EntityToDTO(List<Vehicule> s) {

@@ -1,6 +1,10 @@
 
 package fr.cda.controle.converter;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +15,7 @@ import fr.cda.controle.repositories.StatusRepository;
 import fr.cda.controle.repositories.UserRoleRepository;
 import fr.cda.controle.service.AccountService;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
-import org.modelmapper.ModelMapper;
 
 
 @Component
