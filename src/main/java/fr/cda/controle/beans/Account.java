@@ -157,8 +157,6 @@ public class Account {
 		this.adresse = adresse;
 	}
 	
-	
-	
 	public UserRole getUserrole() {
 		return userRole;
 	}
@@ -173,12 +171,6 @@ public class Account {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Account [id_user=" + id_user + ", password=" + password + ", userRole=" + userRole.toString() + ", status="
-				+ status.toString() + ", duree=" + duree + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", email="
-				+ email + ", adresse=" + adresse + "]";
-	}
 
 
 	

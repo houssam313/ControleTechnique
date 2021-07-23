@@ -21,34 +21,34 @@ import fr.cda.controle.service.AccountService;
 public class AccountController {
 
 	@Autowired
-	private AccountService AccountService;
+	private AccountService accountService;
 
 	@GetMapping("/account/{email}")
 	public AccountDTO getAccount(@PathVariable("email") String a) throws NotFoundException {
-		AccountDTO accountDTO = AccountService.getAccount(a);
+		AccountDTO accountDTO = accountService.getAccount(a);
 		return accountDTO;
 	}
 
 	@GetMapping("/allAccount")
 	public List<AccountDTO> getAllAccount() throws NotFoundException {
-		List<AccountDTO> listAccountDTO = AccountService.getAllAccount();
+		List<AccountDTO> listAccountDTO = accountService.getAllAccount();
 		return listAccountDTO;
 	}
 
 	@PostMapping("/addAccount")
 	public AccountDTO addAccount(@RequestBody AccountDTO AccountDTO) {
-		return AccountService.addAccount(AccountDTO);
+		return accountService.addAccount(AccountDTO);
 	}
-
-	@PutMapping("/updateAccount/{email}")
-	public AccountDTO updateAccount(@PathVariable("email") String email, @RequestBody AccountDTO AccountDTOnew)
-			throws NotFoundException {
-		return AccountService.update(email, AccountDTOnew);
+	
+	@PutMapping("/updateAccount")
+	public AccountDTO updateAccount(@RequestBody AccountDTO AccountDTOnew) throws NotFoundException {
+		return accountService.update(AccountDTOnew);
 	}
+	 
 
 	@DeleteMapping("/deleteAccount/{email}")
 	public void deleteAccount(@PathVariable("email") String email) throws NotFoundException {
-		AccountService.delete(email);
+		accountService.delete(email);
 	}
 
 }

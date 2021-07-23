@@ -10,15 +10,14 @@ import lombok.Data;
 @Transactional
 public class AccountDTO {
 
-	private String password;
 	private String userRole;
 	private String status;
-	
-	private Set<RdvPrisDTO> listRdvpris;
-	private Set<ExamenDTO> listExamen;
-	
-	//private List<integer>  listRdvpris;
-	
+
+	private Set<Integer> listRdvprisn;
+	private Set<Integer> listExamenn;
+
+	// private List<integer> listRdvpris;
+
 	private String duree;
 	private String nom;
 	private String prenom;
@@ -30,10 +29,9 @@ public class AccountDTO {
 		super();
 	}
 
-	public AccountDTO(String password, String userRole, String status, String duree, String nom, String prenom,
-			String tel, String email, String adresse) {
+	public AccountDTO(String userRole, String status, String duree, String nom, String prenom, String tel, String email,
+			String adresse) {
 		super();
-		this.password = password;
 		this.userRole = userRole;
 		this.status = status;
 		this.duree = duree;
@@ -44,69 +42,37 @@ public class AccountDTO {
 		this.adresse = adresse;
 	}
 
-
-	public Set<RdvPrisDTO> getListRdvpris() {
-		return listRdvpris;
+	public Set<Integer> getListRdvprisn() {
+		return listRdvprisn;
 	}
 
-	public void setListRdvpris(Set<RdvPrisDTO> listRdvpris) {
-		this.listRdvpris = listRdvpris;
+	public void setListRdvprisn(Set<Integer> listRdvprisn) {
+		this.listRdvprisn = listRdvprisn;
 	}
 
-	public Set<ExamenDTO> getListExamen() {
-		return listExamen;
+	public Set<Integer> getListExamenn() {
+		return listExamenn;
 	}
 
-	public void setListExamen(Set<ExamenDTO> listExamen) {
-		this.listExamen = listExamen;
+	public void setListExamenn(Set<Integer> listExamenn) {
+		this.listExamenn = listExamenn;
 	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-
 
 	public void setUserRole(String userRole) {
 		this.userRole = userRole;
 	}
 
-
-
-
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
-
-
-
-	
 
 	public String getUserRole() {
 		return userRole;
 	}
 
-
-
-
-
 	public String getStatus() {
 		return status;
 	}
-
-
-
-
-
 
 	public String getDuree() {
 		return duree;
@@ -158,7 +124,11 @@ public class AccountDTO {
 
 	@Override
 	public String toString() {
-		return "AccountDTO [nom=" + nom + ", prenom=" + prenom + ", email=" + email + "]";
+		return "AccountDTO [userRole=" + userRole + ", status=" + status + ", listRdvprisn=" + listRdvprisn
+				+ ", listExamenn=" + listExamenn + ", duree=" + duree + ", nom=" + nom + ", prenom=" + prenom + ", tel="
+				+ tel + ", email=" + email + ", adresse=" + adresse + "]";
 	}
+
+	
 
 }

@@ -36,7 +36,6 @@ public class AccountService {
 
 	public AccountDTO getAccount(String email )  throws NotFoundException {
 		Account account= accountRepository.findByEmail(email);
-		 System.out.println(account); 
 		if(account== null) {
 			throw new NotFoundException();
 		}
@@ -79,24 +78,24 @@ public class AccountService {
 		}
 
 	
-		public AccountDTO update(String email, AccountDTO a2) throws NotFoundException {
+		public AccountDTO update(AccountDTO a2) throws NotFoundException {
 			
-			Account a= accountRepository.findByEmail(email);
+			Account a= accountRepository.findByEmail(a2.getEmail());
 			if (a == null) {
 				throw new NotFoundException();
 			} else {
 				
 				a.setNom(a2.getNom());
 				a.setPrenom(a2.getPrenom());
-				a.setPassword(a2.getPassword());
 				a.setAdresse(a2.getAdresse());
-				a.setEmail(a2.getEmail());
 				a.setDuree(a2.getDuree());
 				a.setTel(a2.getTel());
 				a.setStatus(statusRepository.findByType(a2.getStatus()));
 				a.setUserRole(userRoleRepository.findByRole(a2.getUserRole()));
 				accountRepository.save(a);
 				return accountConverter.EntityToDTO(a);
+			
+				
 			}
 		}
 	 
