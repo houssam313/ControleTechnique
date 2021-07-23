@@ -34,12 +34,34 @@ public class RdvPrisController {
 		return listRdvPrisDTO;
 	}
 
+	
+	/*
+	 * {
+        "id": 2,
+        "nom": "u1",
+        "immatriculation": "000000000",
+        "date": "01-10-2022",
+        "debut_heure": "08:00",
+        "fin_heure": "10:00"
+    }
+	 */
 	@PostMapping("/addRdv")
 	public RdvPrisDTO addRdvPris(@RequestBody RdvPrisDTO rdvPrisDTO) throws AlreadyExistException {
 		return rdvPrisService.addRdvPris(rdvPrisDTO);
 	}
 
 	
+	
+	/*
+	 * {
+        "id": 2,
+        "nom": "u1",
+        "immatriculation": "000000000",
+        "date": "01-10-2022",
+        "debut_heure": "08:00",
+        "fin_heure": "10:00"
+    }
+	 */
 	@PutMapping("/updateRdv")
 	public RdvPrisDTO updateRdvPris(@RequestBody RdvPrisDTO rdvPrisDTO) throws NotFoundException {
 		return rdvPrisService.update(rdvPrisDTO);

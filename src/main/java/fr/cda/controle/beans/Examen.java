@@ -2,6 +2,7 @@ package fr.cda.controle.beans;
 
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,9 @@ public class Examen {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_examen;
-	
+	@Column( name="id_examen")
+	private int id;
+	private int visit_number;
 	private double ripage;
 	private double dissymetrie;
 	private String date;
@@ -43,12 +45,12 @@ public class Examen {
 	@OneToMany( fetch = FetchType.EAGER , mappedBy ="examen")
 	private Set<Recu> listRecu;
 
-	
-
-	public Examen( double ripage, double dissymetrie, String date, double force_verticale,
-			double desequilibre, double force_freinage, double co, Account account, Vehicule vehicule, boolean resultat
-			) {
+	public Examen(int id, int visit_number, double ripage, double dissymetrie, String date, double force_verticale,
+			double desequilibre, double force_freinage, double co, Account account, Vehicule vehicule,
+			boolean resultat) {
 		super();
+		this.id = id;
+		this.visit_number = visit_number;
 		this.ripage = ripage;
 		this.dissymetrie = dissymetrie;
 		this.date = date;
@@ -61,10 +63,26 @@ public class Examen {
 		this.resultat = resultat;
 	}
 
-	
+
+
+
 
 	public Examen() {
 		super();
+	}
+
+
+
+
+
+	public int getVisit_number() {
+		return visit_number;
+	}
+
+
+
+	public void setVisit_number(int visit_number) {
+		this.visit_number = visit_number;
 	}
 
 
@@ -81,14 +99,18 @@ public class Examen {
 
 
 
-	public int getId_examen() {
-		return id_examen;
+
+
+	public int getId() {
+		return id;
 	}
 
 
-	public void setId_examen(int id_examen) {
-		this.id_examen = id_examen;
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
 
 
 	public double getRipage() {
@@ -193,7 +215,7 @@ public class Examen {
 
 	@Override
 	public String toString() {
-		return "Examen [id_examen=" + id_examen + ", ripage=" + ripage + ", dissymetrie=" + dissymetrie + ", date="
+		return "Examen [id_examen=" + id + ", ripage=" + ripage + ", dissymetrie=" + dissymetrie + ", date="
 				+ date + ", force_verticale=" + force_verticale + ", desequilibre=" + desequilibre + ", force_freinage="
 				+ force_freinage + ", co=" + co + ", account=" + account + ", vehicule=" + vehicule + ", resultat="
 				+ resultat + "]";

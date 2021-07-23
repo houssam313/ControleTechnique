@@ -16,7 +16,9 @@ public class AccountDTO {
 	
 	private Set<RdvPrisDTO> listRdvpris;
 	private Set<ExamenDTO> listExamen;
-
+	
+	//private List<integer>  listRdvpris;
+	
 	private String duree;
 	private String nom;
 	private String prenom;
