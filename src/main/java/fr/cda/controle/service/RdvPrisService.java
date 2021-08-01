@@ -1,6 +1,8 @@
 package fr.cda.controle.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +38,18 @@ public class RdvPrisService {
 		return rdvPrisConverter.EntityToDTO(rdvPris);
 		
 	}
+	
+	
+	public List<RdvPrisDTO> getListRdvPris(String email) throws NotFoundException {
+		
+		Account a = accountRepository.findByEmail(email);
+		Set<RdvPris> listrdvPris = a.getListRdvpris();
+		List<RdvPris> list = new ArrayList<>(listrdvPris);
+		List<RdvPrisDTO> listDto = rdvPrisConverter.EntityToDTO(list);
+		return listDto;
+	}
+	
+	
 
 	public List<RdvPrisDTO> getAllRdvPris() throws NotFoundException {	
 		List<RdvPris> listRdvPris = rdvPrisRepository.findAll();
@@ -91,6 +105,7 @@ public class RdvPrisService {
 			return rdvPrisConverter.EntityToDTO(rdvPris);
 		}
 	}
+
 	
 	
 	

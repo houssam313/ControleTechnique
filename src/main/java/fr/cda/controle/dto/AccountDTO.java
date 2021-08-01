@@ -12,9 +12,9 @@ public class AccountDTO {
 
 	private String userRole;
 	private String status;
-
 	private Set<Integer> listRdvprisn;
 	private Set<Integer> listExamenn;
+	private Set<String> listVehicule;
 
 	// private List<integer> listRdvpris;
 
@@ -40,6 +40,14 @@ public class AccountDTO {
 		this.tel = tel;
 		this.email = email;
 		this.adresse = adresse;
+	}
+
+	public Set<String> getListVehicule() {
+		return listVehicule;
+	}
+
+	public void setListVehicule(Set<String> listVehicule) {
+		this.listVehicule = listVehicule;
 	}
 
 	public Set<Integer> getListRdvprisn() {
@@ -128,7 +136,5 @@ public class AccountDTO {
 				+ ", listExamenn=" + listExamenn + ", duree=" + duree + ", nom=" + nom + ", prenom=" + prenom + ", tel="
 				+ tel + ", email=" + email + ", adresse=" + adresse + "]";
 	}
-
-	
 
 }

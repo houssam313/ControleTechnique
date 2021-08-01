@@ -1,15 +1,22 @@
 package fr.cda.controle.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import fr.cda.controle.beans.Account;
+import fr.cda.controle.beans.RdvPris;
 import fr.cda.controle.beans.Vehicule;
 import fr.cda.controle.beans.VehiculeType;
 import fr.cda.controle.converter.VehiculeConverter;
+import fr.cda.controle.dto.RdvPrisDTO;
 import fr.cda.controle.dto.VehiculeDTO;
 import fr.cda.controle.errors.AlreadyExistException;
 import fr.cda.controle.errors.NotFoundException;
+import fr.cda.controle.repositories.AccountRepository;
 import fr.cda.controle.repositories.VehiculeRepository;
 import fr.cda.controle.repositories.VehiculeTypeRepository;
 
@@ -25,6 +32,9 @@ public class VehiculeService {
 	
 	@Autowired
 	VehiculeTypeRepository vehiculeTypeRepository;
+	
+	@Autowired
+	private AccountRepository accountRepository;
 
 	public VehiculeDTO getVehicule(String type )  throws NotFoundException {
 		Vehicule vehicule= vehiculeRepository.findById(type).get();
@@ -85,6 +95,14 @@ public class VehiculeService {
 			return vehiculeDTO;
 		}
 		
+	}
+
+	public List<VehiculeDTO> getListVehicule(String email) {
+		Account a = accountRepository.findByEmail(email);
+		Set<Vehicule> listVehicule = a.getListVehicule();
+		List<Vehicule> list = new ArrayList<>(listVehicule);
+		List<VehiculeDTO> listDTO = vehiculeConverter.EntityToDTO(list);
+		return listDTO;
 	}
 	
 	

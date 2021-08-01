@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.cda.controle.dto.AccountDTO;
+import fr.cda.controle.dto.LoginDTO;
 import fr.cda.controle.errors.NotFoundException;
 import fr.cda.controle.service.AccountService;
 
@@ -28,7 +29,15 @@ public class AccountController {
 		AccountDTO accountDTO = accountService.getAccount(a);
 		return accountDTO;
 	}
+	
+	
+	@PostMapping("/userInfo")
+	public LoginDTO checkUserInfo(@RequestBody LoginDTO a) throws NotFoundException {
+		LoginDTO info = accountService.checkUserInfo(a);
+		return info;
+	}
 
+	
 	@GetMapping("/allAccount")
 	public List<AccountDTO> getAllAccount() throws NotFoundException {
 		List<AccountDTO> listAccountDTO = accountService.getAllAccount();

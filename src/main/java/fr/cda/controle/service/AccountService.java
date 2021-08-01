@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.cda.controle.beans.Account;
 import fr.cda.controle.converter.AccountConverter;
 import fr.cda.controle.dto.AccountDTO;
+import fr.cda.controle.dto.LoginDTO;
 import fr.cda.controle.errors.AlreadyExistException;
 import fr.cda.controle.errors.NotFoundException;
 import fr.cda.controle.repositories.AccountRepository;
@@ -41,6 +42,24 @@ public class AccountService {
 		}
 		return accountConverter.EntityToDTO(account);
 	}
+	
+
+	public LoginDTO checkUserInfo(LoginDTO a) {
+		
+		Account account= accountRepository.findByEmail(a.getEmail());
+		if(account== null) {
+			return null;
+		} else if (account.getPassword().equals(a.getPassword())) {
+			LoginDTO aa = accountConverter.EntityToLoginDTO(account);
+ 			return aa;
+		}
+		return null;
+
+	}
+	
+	
+	
+	
 	
 	  public List<AccountDTO> getAllAccount() throws NotFoundException {
 	  List<Account> listAccount = accountRepository.findAll(); 
@@ -98,6 +117,10 @@ public class AccountService {
 				
 			}
 		}
+
+		
+
+	
 	 
 		  
 		 

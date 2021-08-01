@@ -1,15 +1,22 @@
 package fr.cda.controle.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import fr.cda.controle.beans.Account;
 import fr.cda.controle.beans.Examen;
+import fr.cda.controle.beans.RdvPris;
 import fr.cda.controle.beans.Vehicule;
 import fr.cda.controle.converter.ExamenConverter;
 import fr.cda.controle.dto.ExamenDTO;
+import fr.cda.controle.dto.RdvPrisDTO;
 import fr.cda.controle.errors.AlreadyExistException;
 import fr.cda.controle.errors.NotFoundException;
+import fr.cda.controle.repositories.AccountRepository;
 import fr.cda.controle.repositories.ExamenRepository;
 import fr.cda.controle.repositories.VehiculeRepository;
 
@@ -25,6 +32,10 @@ public class ExamenService {
 	
 	@Autowired
 	private VehiculeRepository  vehiculeRepository;
+	
+	
+	@Autowired
+	private AccountRepository accountRepository;
 
 	public ExamenDTO getExamen(int id )  throws NotFoundException {
 		Examen examen= examenRepository.findById(id).get();
@@ -80,6 +91,16 @@ public class ExamenService {
 			examenRepository.save(exam);
 			return examenDTO;
 		}
+		
+	}
+
+	public List<ExamenDTO> getListExamen(String email) {
+
+			Account a = accountRepository.findByEmail(email);
+			Set<Examen> listExamen = a.getListExamen();
+			List<Examen> list = new ArrayList<>(listExamen);
+			List<ExamenDTO> listDto = examenConverter.EntityToDTO(list);
+			return listDto;
 		
 	}
 	

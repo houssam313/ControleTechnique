@@ -16,6 +16,7 @@ import org.modelmapper.ModelMapper;
 public class ActionsConverter {
 
 	public  ActionsDTO EntityToDTO(Actions s) {
+		
 		ModelMapper mapper = new ModelMapper();
 		ActionsDTO map = mapper.map(s, ActionsDTO.class);
 		map.setId_user(s.getId_actions().getAccount().getId_user());
@@ -24,6 +25,9 @@ public class ActionsConverter {
 		map.setDate(s.getId_actions().getDate().toString());
 		return map;
 	}
+	
+	
+	
 	public List<ActionsDTO> EntityToDTO(List<Actions> s) {
 		return s.stream().map(x -> EntityToDTO(x)).collect(Collectors.toList());
 	}

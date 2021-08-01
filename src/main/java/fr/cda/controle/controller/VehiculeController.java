@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.cda.controle.dto.RdvPrisDTO;
 import fr.cda.controle.dto.VehiculeDTO;
 import fr.cda.controle.errors.NotFoundException;
 import fr.cda.controle.service.VehiculeService;
@@ -34,6 +35,12 @@ public class VehiculeController {
 	@GetMapping("/allVehicule")
 	public List<VehiculeDTO> getAllVehicule() throws NotFoundException {
 		List<VehiculeDTO> listVehiculeDTO = vehiculeService.getAllVehicule();
+		return listVehiculeDTO;
+	}
+	
+	@GetMapping("/listVehicule/{email}")
+	public List<VehiculeDTO> getListVehicule(@PathVariable("email") String email) throws NotFoundException {
+		List<VehiculeDTO> listVehiculeDTO = vehiculeService.getListVehicule(email);
 		return listVehiculeDTO;
 	}
 	

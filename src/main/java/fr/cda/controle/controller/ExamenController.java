@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.cda.controle.dto.ExamenDTO;
+import fr.cda.controle.dto.RdvPrisDTO;
 import fr.cda.controle.errors.NotFoundException;
 import fr.cda.controle.service.ExamenService;
 
@@ -32,6 +33,12 @@ public class ExamenController {
 	@GetMapping("/allExamen")
 	public List<ExamenDTO> getAllExamen() throws NotFoundException {
 		List<ExamenDTO> listExamenDTO = examenService.getAllExamen();
+		return listExamenDTO;
+	}
+	
+	@GetMapping("/listExamen/{email}")
+	public List<ExamenDTO> getListExamen(@PathVariable("email") String email) throws NotFoundException {
+		List<ExamenDTO> listExamenDTO = examenService.getListExamen(email);
 		return listExamenDTO;
 	}
 	

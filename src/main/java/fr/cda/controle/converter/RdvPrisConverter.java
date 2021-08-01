@@ -1,13 +1,10 @@
 
 package fr.cda.controle.converter;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fr.cda.controle.beans.RdvPris;
 import fr.cda.controle.dto.RdvPrisDTO;
-import fr.cda.controle.repositories.AccountRepository;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,8 +14,7 @@ import org.modelmapper.ModelMapper;
 @Component
 public class RdvPrisConverter {
 	
-	@Autowired
-	private AccountRepository accountRepository;
+
 
 	public  RdvPrisDTO EntityToDTO(RdvPris s) {
 		ModelMapper mapper = new ModelMapper();

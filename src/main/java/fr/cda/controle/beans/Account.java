@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.transaction.Transactional;
 
@@ -25,7 +26,7 @@ public class Account {
 	
 	@Column(name="mot_de_passe")
 	private String password;
-	
+
 	@ManyToOne () 
 	@JoinColumn( name="id_role")
 	private UserRole userRole;
@@ -34,6 +35,9 @@ public class Account {
 	@JoinColumn( name="id_status")
 	private Status status;
 		
+	@OneToMany( fetch = FetchType.EAGER , mappedBy ="account")
+	private Set<Vehicule> listVehicule;	
+	
 	@OneToMany( fetch = FetchType.EAGER , mappedBy ="account")
 	private Set<RdvPris> listRdvpris;
 	
@@ -71,6 +75,19 @@ public class Account {
 		this.adresse = adresse;
 	}
 	
+	
+	
+
+	public Set<Vehicule> getListVehicule() {
+		return listVehicule;
+	}
+
+
+	public void setListVehicule(Set<Vehicule> listVehicule) {
+		this.listVehicule = listVehicule;
+	}
+
+
 	public UserRole getUserRole() {
 		return userRole;
 	}

@@ -14,6 +14,10 @@ public class Actions {
 	
 	private String motif;
 	
+	
+	
+	
+	
 	public Actions(IdActions id_actions, String motif) {
 		super();
 		this.id_actions = id_actions;

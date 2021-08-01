@@ -1,8 +1,8 @@
 package fr.cda.controle.dto;
 
-import lombok.Data;
 
-@Data
+
+
 public class ActionsDTO {
 
 	

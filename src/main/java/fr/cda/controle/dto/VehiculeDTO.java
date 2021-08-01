@@ -19,7 +19,7 @@ public class VehiculeDTO {
 
 
 	private String immatriculation;
-	private String proprietaire;
+	private String email;
 	private String date_mis_en_circulation;
 	private String annee;
 	private String modele;
@@ -34,11 +34,12 @@ public class VehiculeDTO {
 	public void setImmatriculation(String immatriculation) {
 		this.immatriculation = immatriculation;
 	}
-	public String getProprietaire() {
-		return proprietaire;
+
+	public String getEmail() {
+		return email;
 	}
-	public void setProprietaire(String proprietaire) {
-		this.proprietaire = proprietaire;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getDate_mis_en_circulation() {
 		return date_mis_en_circulation;

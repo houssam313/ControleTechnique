@@ -27,6 +27,12 @@ public class RdvPrisController {
 		RdvPrisDTO RdvPrisDTO = rdvPrisService.getRdvPris(id);
 		return RdvPrisDTO;
 	}
+	
+	@GetMapping("/listRdvPris/{email}")
+	public List<RdvPrisDTO> getListRdvPris(@PathVariable("email") String email) throws NotFoundException {
+		List<RdvPrisDTO> listRdvPrisDTO = rdvPrisService.getListRdvPris(email);
+		return listRdvPrisDTO;
+	}
 
 	@GetMapping("/allRdvPris")
 	public List<RdvPrisDTO> getAllRdvPris() throws NotFoundException {
@@ -34,7 +40,6 @@ public class RdvPrisController {
 		return listRdvPrisDTO;
 	}
 
-	
 	/*
 	 * {
         "id": 2,
