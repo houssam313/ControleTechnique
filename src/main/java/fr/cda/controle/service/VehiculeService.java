@@ -37,11 +37,17 @@ public class VehiculeService {
 	private AccountRepository accountRepository;
 
 	public VehiculeDTO getVehicule(String type )  throws NotFoundException {
-		Vehicule vehicule= vehiculeRepository.findById(type).get();
-		if(vehicule== null) {
-			throw new NotFoundException();
+		
+		try {
+			Vehicule vehicule= vehiculeRepository.findById(type).get();
+			return vehiculeConverter.EntityToDTO(vehicule);
+		} catch (Exception e) {
+			return null;
+			
 		}
-		return vehiculeConverter.EntityToDTO(vehicule);
+		
+	
+		
 	}
 
 	public List<VehiculeDTO> getAllVehicule() throws NotFoundException {	
@@ -59,7 +65,7 @@ public class VehiculeService {
 		if(vehicule == null)
 		{
 			VehiculeType type = vehiculeTypeRepository.findByType(vehiculeDTO.getVehiculeType());
-			 vehicule = vehiculeConverter.dTOToEntity(vehiculeDTO);
+			vehicule = vehiculeConverter.dTOToEntity(vehiculeDTO);
 			vehicule.setVehiculeType(type);
 			
 			vehiculeRepository.save(vehicule);

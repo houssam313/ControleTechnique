@@ -37,7 +37,7 @@ public class RdvPris {
 	private String immatriculation;
 	private String date;
 	private String debut_heure;
-	private String fin_heure;
+	
 	
 	
 	public RdvPris() {
@@ -45,13 +45,13 @@ public class RdvPris {
 	}
 	
 	public RdvPris( Account account,  String immatriculation, String date,
-			String debut_heure, String fin_heure) {
+			String debut_heure) {
 		super();
 		this.account = account;
 		this.immatriculation = immatriculation;
 		this.date = date;
 		this.debut_heure = debut_heure;
-		this.fin_heure = fin_heure;
+		
 	}
 	public int getId_rdv() {
 		return id;
@@ -83,16 +83,11 @@ public class RdvPris {
 	public void setDebut_heure(String debut_heure) {
 		this.debut_heure = debut_heure;
 	}
-	public String getFin_heure() {
-		return fin_heure;
-	}
-	public void setFin_heure(String fin_heure) {
-		this.fin_heure = fin_heure;
-	}
+
 	@Override
 	public String toString() {
 		return "Rdvpris [id_rdv=" + id+ ", account=" + account + ", immatriculation=" + immatriculation + ", date="
-				+ date + ", debut_heure=" + debut_heure + ", fin_heure=" + fin_heure + "]";
+				+ date + ", debut_heure=" + debut_heure +  "]";
 	}
 	
 	

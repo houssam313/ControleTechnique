@@ -2,15 +2,16 @@ package fr.cda.controle.errors;
 
 public class NotFoundException extends Exception {
 
-    public NotFoundException() {
-        super("Not found");
+    public String NotFoundException() {
+       return null;
     }
 
-    public NotFoundException(String message, Throwable cause) {
-        super(message, cause);
+    public String NotFoundException(String message, Throwable cause) {
+        
+        return null;
     }
 
-    public NotFoundException(String message) {
-        super(message);
+    public String NotFoundException(String message) {
+       return null;
     }
 }

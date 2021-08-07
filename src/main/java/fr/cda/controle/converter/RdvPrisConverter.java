@@ -19,7 +19,7 @@ public class RdvPrisConverter {
 	public  RdvPrisDTO EntityToDTO(RdvPris s) {
 		ModelMapper mapper = new ModelMapper();
 		RdvPrisDTO map = mapper.map(s, RdvPrisDTO.class);
-		map.setNom(s.getAccount().getNom());
+		map.setEmail(s.getAccount().getEmail());
 		return map;
 	}
 	public List<RdvPrisDTO> EntityToDTO(List<RdvPris> s) {

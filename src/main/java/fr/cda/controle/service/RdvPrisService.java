@@ -61,7 +61,7 @@ public class RdvPrisService {
 
 	public RdvPrisDTO addRdvPris(RdvPrisDTO rdvPrisDTO) throws AlreadyExistException{
 		
-		Account account = accountRepository.findByNom(rdvPrisDTO.getNom());
+		Account account = accountRepository.findByEmail(rdvPrisDTO.getEmail());
 		RdvPris rdvPris = rdvPrisRepository.findById(rdvPrisDTO.getId());
 		if(rdvPris == null)
 		{
@@ -91,7 +91,7 @@ public class RdvPrisService {
 	
 	public RdvPrisDTO update(RdvPrisDTO rdvPrisDTO) throws NotFoundException {
 
-		Account account = accountRepository.findByNom(rdvPrisDTO.getNom());
+		Account account = accountRepository.findByEmail(rdvPrisDTO.getEmail());
 		RdvPris rdvPris = rdvPrisRepository.findById(rdvPrisDTO.getId());
 		if (rdvPris == null) {
 			throw new NotFoundException();
@@ -99,7 +99,7 @@ public class RdvPrisService {
 			rdvPris.setDate(rdvPrisDTO.getDate());
 			rdvPris.setImmatriculation(rdvPrisDTO.getImmatriculation());
 			rdvPris.setDebut_heure(rdvPrisDTO.getDebut_heure());
-			rdvPris.setFin_heure(rdvPrisDTO.getFin_heure());
+			
 			rdvPris.setAccount(account);
 			rdvPrisRepository.save(rdvPris);
 			return rdvPrisConverter.EntityToDTO(rdvPris);

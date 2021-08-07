@@ -6,21 +6,22 @@ import lombok.Data;
 public class RdvPrisDTO {
 
 	private int id;
-	private String nom;
+	private String email;
 	private String immatriculation;
 	private String date;
 	private String debut_heure;
-	private String fin_heure;
-	
-	
-	
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 
+	
+	
+	
+
+
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getImmatriculation() {
 		return immatriculation;
 	}
@@ -46,12 +47,7 @@ public class RdvPrisDTO {
 	public void setDebut_heure(String debut_heure) {
 		this.debut_heure = debut_heure;
 	}
-	public String getFin_heure() {
-		return fin_heure;
-	}
-	public void setFin_heure(String fin_heure) {
-		this.fin_heure = fin_heure;
-	}
+
 	
 	
 }
